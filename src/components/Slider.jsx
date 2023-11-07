@@ -1,13 +1,10 @@
 import React from "react";
-import Slider from "infinite-react-carousel";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import './Style.css'
 
-const Sliderr = ({ children, slidesToShow, arrowsScroll, duration }) => {
-  return (
-    <Slider slidesToShow={slidesToShow} arrowsScroll={arrowsScroll} duration={duration}>
-      {children}
-    </Slider>
-  );
+const Sliderr = ({ children, responsive }) => {
+  return <Carousel responsive={responsive} infinite={true}>{children}</Carousel>;
 };
 
 export default Sliderr;

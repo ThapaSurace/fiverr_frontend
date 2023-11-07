@@ -6,7 +6,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component'
 const CategoryCard = ({item}) => {
   return (
   <Link to={`/gigs?cat=${item.title}`}>
-     <div className='w-full md:w-52 h-80 relative cursor-pointer'>
+     <div className='h-80 relative cursor-pointer w-full md:w-64'>
        <LazyLoadImage src={item.img} alt={item.title} className='h-full w-full object-cover rounded-md' />
        <div className='absolute top-2 left-4 text-white'>
         <h1 className='text-sm'>{item.title}</h1>

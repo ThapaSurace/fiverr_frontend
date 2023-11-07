@@ -32,6 +32,7 @@ import OrderDetail from "./pages/order/OrderDetail";
 import OrderRequirement from "./pages/order/OrderRequirement";
 import PublicFeedback from "./components/Order/Buyer/PublicFeedback";
 import EmailVerification from "./pages/EmailVerification";
+import Demo from "./pages/ImageSlideShow";
 
 function App() {
   const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ function App() {
                 <Route path="/" element={<Home />} exact />
                 <Route path="/gigs" element={<Gigs />} />
                 <Route path="/gig/:id" element={<SingleGigPage />} />
+                <Route path="/demo" element={<Demo />} />
 
                 <Route path="/test" element={<OrderSlider />} />
                 <Route path="/mygigs" element={<MyGigs />} />

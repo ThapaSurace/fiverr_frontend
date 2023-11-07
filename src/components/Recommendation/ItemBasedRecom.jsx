@@ -4,6 +4,7 @@ import Loading from "../../utils/loading";
 import GigsCard from "../Card/GigsCard";
 import Sliderr from "../Slider";
 import { useAuth } from "../../context/AuthContext";
+import { gig_slider } from "../../slider_responsive/responsive_slider";
 
 const ItemBasedRecom = ({ gigId }) => {
   const {user} = useAuth()
@@ -21,7 +22,7 @@ const ItemBasedRecom = ({ gigId }) => {
           ) : error ? (
             "Something went wrong"
           ) : data && data?.length > 0 ? (
-            <Sliderr slidesToShow={4} arrowsScroll={3} duration={300}>
+            <Sliderr responsive={gig_slider}>
               {data?.map((gig) => (
                 <GigsCard gig={gig} key={gig._id} />
               ))}

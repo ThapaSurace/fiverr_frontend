@@ -5,6 +5,7 @@ import GigsCard from "../Card/GigsCard";
 import { useGetUserRecomendationQuery } from "../../api/RecomendationApi/RecomendationApi";
 import Sliderr from "../Slider";
 import { useAuth } from "../../context/AuthContext";
+import { gig_slider } from "../../slider_responsive/responsive_slider";
 
 const UserBasedRecomendation = () => {
   const {user} = useAuth()
@@ -51,7 +52,7 @@ const UserBasedRecomendation = () => {
           </h1>
 
           { gigDetails && gigDetails?.length > 0 ? (
-            <Sliderr slidesToShow={4} arrowsScroll={3} duration={300}>
+            <Sliderr responsive={gig_slider}>
               {gigDetails?.map((gig) => (
                 <GigsCard gig={gig} key={gig._id} />
               ))}

@@ -7,6 +7,7 @@ import Layout from "../utils/Layout";
 import UserBasedRecomendation from "../components/Recommendation/UserBasedRecomendation";
 import { GrProjects, GrInProgress } from "react-icons/gr";
 import { FaUserSecret, FaMoneyCheckAlt } from "react-icons/fa";
+import { cat_slider } from "../slider_responsive/responsive_slider";
 
 const Home = () => {
   const [windowSize, setWindowSize] = useState({
@@ -36,11 +37,7 @@ const Home = () => {
             popular services
           </span>
           <div>
-            <Sliderr
-              slidesToShow={windowSize.width <= 576 ? 1 : 5}
-              arrowsScroll={windowSize.width <= 576 ? 1 : 3}
-              duration={300}
-            >
+            <Sliderr responsive={cat_slider}>
               {cats.map((c) => (
                 <CategoryCard key={c.id} item={c} />
               ))}

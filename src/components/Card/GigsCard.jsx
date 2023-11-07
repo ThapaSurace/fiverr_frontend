@@ -86,7 +86,7 @@ const GigsCard = ({ gig }) => {
   };
 
   return (
-    <div className="flex flex-col gap-2  cursor-pointer mr-4">
+    <div className="flex flex-col gap-2 cursor-pointer mr-4">
       <div className="relative">
         <LazyLoadImage
           src={gig.cover}

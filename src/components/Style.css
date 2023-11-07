@@ -10,3 +10,27 @@
     bottom: 0;
     margin: auto;
 }
+
+.react-multiple-carousel__arrow::before {
+    font-size: 20px;
+    display: block;
+    font-family: revicons;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    right: 0;
+  }
+
+  .react-multiple-carousel__arrow {
+    position: absolute;
+    outline: 0;
+    transition: all .5s;
+    border-radius: 35px;
+    z-index: 1000;
+    border: 0;
+    background: rgba(0,0,0,0.7);
+    min-width: 50px;
+    min-height: 50px;
+    opacity: 1;
+    cursor: pointer;
+}

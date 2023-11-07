@@ -25,6 +25,8 @@ import { useModal } from "../context/AuthModalContext";
 import AuthModal from "../components/AuthModal/AuthModal"
 import CategoryName from "../components/Layouts/CategoryName";
 import { useSingleUserQuery } from "../api/UserApi/UserApi";
+import { gig_slider, recomendate_slider } from "../slider_responsive/responsive_slider";
+import ImageSlideShow from "./ImageSlideShow";
 
 const SingleGigPage = () => {
   const { user } = useAuth();
@@ -111,7 +113,7 @@ const SingleGigPage = () => {
                 </div>
               </div>
 
-             {
+             {/* {
               data?.images && data?.images.length > 0 && (
                 <Sliderr
                 className="rounded-md overflow-hidden"
@@ -129,8 +131,11 @@ const SingleGigPage = () => {
                 ))}
               </Sliderr>
               ) 
-             }
+             } */}
 
+             <div>
+              <ImageSlideShow data={data} />
+             </div>
               <div className="mt-4 mb-8">
                 <h1 className="font-bold text-2xl mb-4">About the gigs</h1>
                 <p className="text-[#62646a] tracking-wide leading-6">
@@ -139,7 +144,7 @@ const SingleGigPage = () => {
               </div>
 
               {/* related gigs */}
-              <div>
+              {/* <div>
                 {relatedGigs?.length !== 0 && (
                   <div className="mb-8 bg-[#fafafa] p-4 border border-[#e4e5e7] rounded-md">
                     {isLoadingRelatedGig ? (
@@ -153,9 +158,7 @@ const SingleGigPage = () => {
                         </span>
 
                         <Sliderr
-                          slidesToShow={2}
-                          arrowsScroll={2}
-                          duration={300}
+                          responsive={recomendate_slider}
                         >
                           {relatedGigs?.map((gig) => (
                             <div className="mt-4">
@@ -167,7 +170,7 @@ const SingleGigPage = () => {
                     )}
                   </div>
                 )}
-              </div>
+              </div> */}
 
               {/* Review */}
               <Reviews gigId={id} userId={data.userId} />

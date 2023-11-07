@@ -98,3 +98,27 @@ svg:focus {
   background-color: red; /* Set your desired custom color */
   color: white; /* Set the text color to be visible on your custom background */
 }
+
+.react-multi-carousel-dot-list{
+  position: absolute;
+    bottom: 20px;
+    display: flex;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    margin: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.react-multiple-carousel__arrow::before {
+  font-size: 20px;
+  
+  display: block;
+  font-family: revicons;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
