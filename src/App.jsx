@@ -52,6 +52,7 @@ function App() {
 
                 <Route path="/test" element={<OrderSlider />} />
                 <Route path="/mygigs" element={<MyGigs />} />
+                <Route path="/success" element={<Success />} />
 
                 <Route
                   path="/emailconfirmation"
@@ -63,7 +64,7 @@ function App() {
                   <Route path="/addgig" element={<AddNewGig />} />
                   <Route path="/messages" element={<Messages />} />
                   <Route path="/orders" element={<Orders />} />
-                  <Route path="/success" element={<Success />} />
+             
                   <Route path="/wishlist" element={<Wishlist />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/clients" element={<ClientList />} />
