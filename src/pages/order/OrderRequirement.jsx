@@ -72,9 +72,9 @@ const OrderRequirement = () => {
             <h1 className="text-xl text-slate-950 font-bold tracking-wider capitalize">
               Thank you for your purchase
             </h1>
-            <span className="text-sm font-bold">
+            {/* <span className="text-sm font-bold">
               A recipt was sent to your email
-            </span>
+            </span> */}
           </div>
         </div>
 

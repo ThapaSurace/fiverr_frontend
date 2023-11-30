@@ -143,11 +143,11 @@ const OrderDeliveryModal = ({ isOpen, setIsOpen, id }) => {
                   <div className="mt-4 flex flex-wrap gap-2">
                     {uploadedFile.map((url, index) => (
                       <div key={index} className="mt-2">
-                        {url.toLowerCase().endsWith(".png") ||
-                        url.toLowerCase().endsWith(".jpg") ||
-                        url.toLowerCase().endsWith(".jpeg") ||
-                        url.toLowerCase().endsWith(".gif") ||
-                        url.toLowerCase().endsWith(".svg") ? (
+                        {url?.toLowerCase().endsWith(".png") ||
+                        url?.toLowerCase().endsWith(".jpg") ||
+                        url?.toLowerCase().endsWith(".jpeg") ||
+                        url?.toLowerCase().endsWith(".gif") ||
+                        url?.toLowerCase().endsWith(".svg") ? (
                           <div className=" w-36 relative">
                             <LazyLoadImage
                               src={url}
