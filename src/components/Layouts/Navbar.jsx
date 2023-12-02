@@ -73,7 +73,7 @@ const Navbar = () => {
 
             <div className="hidden gap-4 items-center md:flex">
               <ul className="flex gap-4 cursor-pointer items-center">
-                {user && (
+                {!user?.isSeller && (
                   <Link to="/personal_info">
                     <li>Become a seller</li>
                   </Link>
