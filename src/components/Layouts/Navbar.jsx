@@ -256,7 +256,7 @@ const Navbar = () => {
               <ul className="flex flex-col gap-4 cursor-pointer items-start font-bold text-lgs">
                 <li>Fiver Business</li>
                 <li>Explore</li>
-                <li>Become a seller</li>
+                {user?.isSeller && <li>Become a seller</li>}
                 <li>
                   <button className=" ">Sign In</button>
                 </li>
