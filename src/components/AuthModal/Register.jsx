@@ -9,7 +9,6 @@ import countryList from "react-select-country-list";
 import { useModal } from "../../context/AuthModalContext";
 import show from "../../assests/eye_visible.png";
 import hide from "../../assests/hide.png";
-import { useMutation } from "@tanstack/react-query";
 
 const Register = () => {
   const [file, setFile] = useState("");
@@ -17,10 +16,7 @@ const Register = () => {
 
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const [showOtpField,setShowOtpField] = useState(false)
-  const [otp,setOtp] = useState("")
-  const [userEmail,setUserEmail] = useState("")
- 
+
 
   const tooglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
@@ -36,32 +32,12 @@ const Register = () => {
         img: url,
       });
       setError("");
-      setUserEmail(values.email)
-      setShowOtpField(true)
-  
     } catch (err) {
       setError(err.response.data.error);
       console.log(err.response.data.error);
     }
   };
 
-  const {mutate,loading} = useMutation({
-    mutationFn: async (data) => {
-      return newRequest.post("/auth/verifyEmail",data)
-    },
-    onSuccess: () => {
-      setCurrentContent("login")
-    },
-  })
-
-  const submitOtp = () => {
-    const otpData = {
-      otp,
-      email: userEmail
-    }
-    mutate(otpData)
-    console.log(otpData)
-  }
 
   const options = useMemo(() => countryList().getData(), []);
 
@@ -94,19 +70,6 @@ const Register = () => {
 
   return (
    <>
-    {
-      showOtpField ? (
-        <>
-         <h1 className="text-2xl font-bold text-center capitalize text-darkteal">verify your email</h1>
-         <p className="text-center mt-2 text-sm font-bold text-slate-500">Enter the OTP sent to your email.</p>
-         <input type="text" id="otp" name="otp" className="mt-3" value={otp} onChange={(e)=>setOtp(e.target.value)} />
-         <div>
-         <button disabled={loading} onClick={submitOtp} className="btn bg-teal hover:bg-darkteal text-white mt-2 w-full py-2">
-          Verify
-          </button>
-         </div>
-        </>
-      ) : (
         <div className="my-1">
         <div className="mb-4 text-sm">
           <h1 className="text-2xl text-darkteal mb-2 font-bold tracking-wide text-center uppercase">
@@ -118,14 +81,6 @@ const Register = () => {
             className="font-bold text-stone-800 hover:underline cursor-pointer"
             onClick={()=>setCurrentContent("login")}
             >
-              {loading ? (
-              <>
-                <Loading type={"spin"} color={"white"} height={20} width={20} />
-                <span>processing</span>
-              </>
-            ) : (
-              "verify"
-            )}
             </span>
           </p>
         </div>
@@ -248,8 +203,6 @@ const Register = () => {
           </button>
         </form>
       </div>
-      )
-    }
    </>
   );
 };
